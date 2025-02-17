@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}ESP32{% endblock %}
+
+{% block content %}
+<h1>ESP32</h1>
+<figure class="figure">
+    <img src="{{url_for('static', filename = 'esp32.jpg')}}" class="figure-img img-fluid rounded" alt="esp32">
+    <figcaption class="figure-caption">ESP32 PLACA DE DESENVOLVIMENTO ESPRESSIF ESP32-WROOM-32 - KEYESTUDIO KS0413</figcaption>
+</figure>
+<br/>
+<li>Description:
+  <ul>
+    <li>The processor core of the keyestudio ESP32 board is the ESP32-WROOM-32D module.</li>
+    <li>The ESP32-WROOM-32 is a universal Wi-Fi+BT+BLE MCU module, with powerful functions; can be used in low power sensor networks. The core of this module is the ESP32-D0WDQ6 chip, which is scalable and adaptive. The two CPU cores can be individually controlled</li>
+    <li>The ESP32 integrates a wide range of peripherals including capacitive touch sensor, Hall sensor, low noise amplifiers, SD card and Ethernet interfaces, high speed SDIO/SPI, UART, I2S and I2C, etc</li>
+    <li>It also integrates traditional Bluetooth, Bluetooth low energy and Wi-Fi for a wide range of uses</li>
+    <li>The ESP32 chip's sleep current is less than 5μA, suitable for battery-powered wearable electronics.</li>
+    <li>The module supports data rates up to 150 Mbps; antenna output power of 20 dBm for maximum wireless communication</li>
+  </ul>
+</li>
+<br/>
+<li>Technical Details:
+  <ul>
+    <li>Microcontroller: ESP-WROOM-32 module</li>
+    <li>USB to Serial Port Chip: CP2102-GMR</li>
+    <li>Operating Voltage: DC 5V</li>
+    <li>Operating Current: 80mA (average)</li>
+    <li>Current Supply: 500mA (Minimum) </li>
+    <li>Operating Temperature Range: -40℃ ~ +85℃ </li>
+    <li>WiFi mode: Station/SoftAP/SoftAP+Station/P2P </li>
+    <li>WiFi protocol: 802.11 b/g/n/e/i (802.11n, speed up to 150 Mbps) </li>
+    <li>WiFi frequency range: 2.4 GHz ~ 2.5 GHz </li>
+    <li>Bluetooth protocol: conform to Bluetooth v4.2 BR/EDR and BLE standards </li>
+    <li>Dimensions: 55mm*26mm*13mm </li>
+    <li>Weight: 9.3g </li>
+  </ul>
+</li>
+<br/>
+<h3>Pinout</h3><br/>
+<figure class="figure">
+    <img src="{{url_for('static', filename = 'ESP32_pinout.webp')}}" class="figure-img img-fluid rounded" alt="pinout">
+    <figcaption class="figure-caption">ESP32 WROOM-32 ESP32 PINOUT</figcaption>
+</figure><br/>
+{% endblock %}

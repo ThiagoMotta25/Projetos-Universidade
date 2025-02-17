@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}System{% endblock %}
+
+{% block content%}
+
+<h1 align="center">Systems related to Current User</h1></br>
+<table class="table table-hover">
+    <thead class="thead thead-dark">
+    <tr>
+        <th>System Id</th>
+        <th>Location</th>
+        <th>Processed</th>
+    </tr>
+    </thead>
+    {% for info in data %}
+    <tr>
+        <td>{{ info[3] }}</td>
+        <td>{{ info[0] }}</td>
+        {% if info[2] == 1 %}
+            <td>True</td>
+        {% else %}
+            <td>False</td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+</table>
+<br><br/>
+
+<button class="btn btn-dark btn-lg btn-block" onclick="toggle(this);">Add New System</button>
+    <script>
+    let toggle = button => {
+        let element = document.getElementById("sys-creator");
+        let hidden = element.getAttribute("hidden");
+
+        if (hidden) {
+        element.removeAttribute("hidden");
+        button.innerText = "Close";
+        } else {
+        element.setAttribute("hidden", "hidden");
+        button.innerText = "Create New System";
+        }
+    }
+    </script><br/>
+    
+<form method="POST" id="sys-creator" hidden="hidden">
+    <select class="custom-select custom-select-lg mb-3" id="location" name="location">    
+        <option selected>Choose System Location</option>
+        <option value="Braga">Braga</option>
+        <option value="Guimarães">Guimarães</option>
+        <option value="Viseu">Viseu</option>
+    </select>
+    <br />
+    <button class="btn btn-primary" type="submit">Submit</button>
+</form>
+{% endblock %}

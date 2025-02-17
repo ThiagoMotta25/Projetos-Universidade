@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Soil Humidity Sensor{% endblock %}
+
+{% block content %}
+<h1>Soil Humidity Sensor</h1>
+
+<figure class="figure">
+    <img src="{{url_for('static', filename = 'sensor-de-humidade-no-solo.jpg')}}" class="figure-img img-fluid rounded" alt="pinout">
+    <figcaption class="figure-caption">Soil Humidity Sensor</figcaption>
+</figure><br/>
+<li>This is a simple water sensor can be used to detect soil moisture when the soil moisture deficit module plant waterer device, so that the plants in your garden without people to manage.</li>
+<br/>
+{% endblock %}

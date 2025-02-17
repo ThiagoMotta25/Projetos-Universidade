@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %} Admin {% endblock %}
+
+{% block content%}
+<h1>Admin Panel</h1>
+<section class="section">
+    <input type="text" class="input" placeholder="Search User" name="q" hx-get="/search" hx-trigger="keyup changed delay:500ms" hx-target="#results">
+    <table class="table is-fullwidth">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>E-mail</th>
+          <th>Id</th>
+          <th>Role</th>
+          <th>Manage User</th>
+        </tr>
+      </thead>
+      <tbody id="results">
+
+      </tbody>
+    </table>
+</section>
+
+{% endblock %}

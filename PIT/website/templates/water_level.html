@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Water Level Sensor{% endblock %}
+
+{% block content %}
+<h1>Water Level Sensor</h1>
+<figure class="figure">
+    <img src="{{url_for('static', filename = 'sensor-nivel-agua.jpg')}}" class="figure-img img-fluid rounded" alt="water_level">
+    <figcaption class="figure-caption">Water Level Sensor or Rain Drop Sensor with analog output.</figcaption>
+</figure>
+<br/>
+<li>Specifications:
+    <ul>
+      <li>Working voltage: 3~5Vdc</li>
+      <li>Working current: less then 20mA</li>
+      <li>Output type: analog</li>
+      <li>Detection area: 40 mm x 16 mm</li>
+      <li>PCB type: FR4 HASL double sided</li>
+      <li>Working temperature: 10~30º</li>
+      <li>Working Humidity: 10% -90% without condensation</li>
+      <li>Dimensions: 62 mm x 20 mm x 8 mm</li>
+    </ul>
+</li>
+<br/>
+
+{% endblock %}

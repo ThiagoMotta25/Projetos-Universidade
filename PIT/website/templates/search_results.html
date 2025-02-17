@@ -1,0 +1,35 @@
+{% set users = User.query.all() %}
+
+{% for result, user in results|zip(users) %}
+<tr>
+    <td>{{ result.full_name }}</td>
+    <td>{{ result.email }}</td>
+    <td>{{ result.id }}</td>
+    <td>{{ result.type }}</td>
+    <td>
+        <a class="btn btn-primary" href="{{url_for('auth.update_user', id = result.id)}}">Edit User</a>
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal-{{ user.id }}">Delete User</button>
+
+        <!-- Modal -->
+        <div class="modal fade" id= "exampleModal-{{ user.id }}" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalLabel">Delete User</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        User will be deleted permanently. Are you sure you want to continue?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-danger" href="{{url_for('auth.delete_user', id = result.id)}}">Delete User</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </td>
+</tr>
+{% endfor %}

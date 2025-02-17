@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Water Pump{% endblock %}
+
+{% block content %}
+<h1>Water Pump</h1>
+<figure class="figure">
+    <img src="{{url_for('static', filename = 'bomba_dagua.jpg')}}" class="figure-img img-fluid rounded" alt="water_pump">
+    <figcaption class="figure-caption">An underwater pump (horizontal version) suitable for a 6mm hose.</figcaption>
+</figure>
+<br/>
+<li>Specifications:
+    <ul>
+      <li>Voltage range: 3-6V DC</li>
+      <li>Current: ~ 150-200 mA (depending on voltage and pressure)</li>
+      <li>Pump speed: approx. 80 L/hour</li>
+      <li>Diameter output: 6mm inside size (hose must have approx. 6mm inner diameter)</li>
+      <li>Can be placed horizontally in a water reservoir</li>
+      <li>Lifespan (if in operation): 200 hours</li>
+    </ul>
+</li>
+<br/>
+<li>Pinout:
+    <ul>
+      <li>Red wire: +3-6V</li>
+      <li>White thread: ground/min/gnd</li>
+     </ul>
+</li>
+<br/>
+{% endblock %}

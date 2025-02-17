@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Guimarães{% endblock %} <!--Nome da Pagina-->
+
+{% block content %}
+<h1 align ="center"><u>Guimarães</u></h1><br/>
+
+<h3>Soil Humidity-Time Graph</h3>
+<figure class="figure">
+  <img src="{{url_for('static', filename = 'Guimaraes_plot.png')}}" class="figure-img img-fluid rounded" alt="braga_graph">
+  <figcaption class="figure-caption">Humidity Graph</figcaption>
+</figure>
+
+<br><!--Salta uma linha na pagina-->
+<h1 align = "center">Humidity Table</h1>
+
+<button class="btn btn-info btn-lg btn-block" onclick="toggle(this);">Show Table</button>
+<script>
+  let toggle = button => {
+    let element = document.getElementById("ht-guima");
+    let hidden = element.getAttribute("hidden");
+
+    if (hidden) {
+       element.removeAttribute("hidden");
+       button.innerText = "Hide table";
+    } else {
+       element.setAttribute("hidden", "hidden");
+       button.innerText = "Show table";
+    }
+  }
+</script><br/>
+
+<br/>
+<table class="table table-hover" id="ht-guima" hidden="hidden">
+  <thead class="thead thead-dark">
+    <tr>
+      <th>Time of Register</th>
+      <th>Sample</th>
+    </tr>
+    </thead>
+    {% for info in data %}
+    <tr>
+        <td>{{ info[0] }}</td>
+      {% if info[1] > 2800 %}
+        <td class="table-danger">{{ info[1]}}</td>
+      {% else %}
+        <td class="table-success">{{ info[1] }}</td>
+      {% endif %}
+    </tr>
+    {% endfor %}
+  </table><br/>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %} Update User {% endblock %}
+
+{% block content%}
+
+
+<form action="/update-user/{{user.id}}" method="POST">
+    <h3 align = "center">Update Info</h3>
+    <div class="form-group">
+        <label for="email"> New Email Address</label>
+        <input type="email" class="form-control" value="{{user.email}}" id="email" name="email">
+    </div>
+
+    <div class="form-group">
+        <label for="newname"> New Full Name</label>
+        <input type="text" class="form-control" value="{{user.full_name}}" id="full_name" name="full_name">
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block content%}
+<h1 align = "center">Project Info</h1><br/>
+
+<h3>Click on the parts of the sistem and learn more about the components:</h3>
+
+<img src="{{url_for('static', filename = 'sensor_sistem.webp')}}" class="img-fluid" alt="Sistem" usemap="#sistem" width="967" height="565">
+
+<map name="sistem">
+  <area shape="rect" coords="539,121 , 680,439" alt="ESP32" href="/esp32">
+  <area shape="rect" coords="302,224 , 475,298" alt="Rele" href="/relay">
+  <area shape="rect" coords="50,400 , 226,476" alt="Bateria" href="/batery">
+  <area shape="rect" coords="754,149 , 927,223" alt="Umidade" href="/humidity-sensor">
+  <area shape="rect" coords="754,336 , 927,415" alt="Nivel" href="/waterlevel-sensor">
+  <area shape="rect" coords="50,224 , 226,298" alt="Bomba" href="/water-pump">
+</map><br/>
+
+
+<h1 align = "center">Notes</h1><br/>
+<form method="POST">
+    <textarea name="note" id="note" class="form-control"></textarea>
+    <br/>
+    <div align="center">
+        <button type="submit" class="btn btn-primary">Add Note</button>
+    </div>
+</form>
+
+<ul class="list-group list-group-flush" id="notes">
+    {% for note in user.notes %}
+    <li class="list-group-item">
+      {{ note.data }}
+      <button type="button" class="close" onClick="deleteNote({{ note.id }})">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
