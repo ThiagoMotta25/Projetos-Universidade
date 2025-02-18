@@ -6,4 +6,4 @@ Para correr o projeto bastava iniciar o main.py (Foi utilizado um prazo limitado
 
 Este Projeto foi realizado no 3º ano da licenciatura de Engenharia de Telecomunicações e Informática na Universidade do Minho ano 2023/2024 num prazo de 4 meses.
 
-Código nao consiste no projeto por inteiro, consiste somente no Website.
+Código não consiste no projeto por inteiro, consiste somente no Website.
